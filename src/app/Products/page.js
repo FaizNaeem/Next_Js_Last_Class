@@ -13,12 +13,14 @@ console.log(product);
         product.map((e,i)=>{
   return(
     <>
-<div className='w-70 flex flex-col items-center border'>
+    <Link href={`/Products/${e.id}`}>
+<div className='w-70 flex flex-col items-center border h-1/5'>
 <Image src={e.image} width={200} height={200}/>
 <h1 className='text-2xl' style={{width:"300px"}}>{e.title}</h1>
 <h1>{e.price}</h1>
-<button className='p-3 bg-green-600 rounded-md w-44 text-white'>Order</button>
+<button className='p-3 bg-green-600 rounded-md w-44 text-white mb-3'>Order</button>
 </div>
+    </Link>
     </>
   )
 
