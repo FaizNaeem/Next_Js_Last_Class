@@ -21,7 +21,6 @@ console.log(product);
 
         })
     }
-
  </div>
     </main>
   )
