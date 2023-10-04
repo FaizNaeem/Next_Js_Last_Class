@@ -1,6 +1,9 @@
 import getData from '@/lib/product'
 import Image from 'next/image'
 import Link from 'next/link'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './product.css'
+
 
 export default async function Products() {
 const product = await getData()
@@ -8,17 +11,19 @@ console.log(product);
   return (
     <main className="">
  <h1 className='text-3xl text-center'>Products</h1>
- <div className='flex flex-row justify-between items-center flex-wrap w-full'>
+ <div className='h' >
     {
         product.map((e,i)=>{
   return(
     <>
-    <Link href={`/Products/${e.id}`}>
-<div className='w-70 flex flex-col items-center border h-1/5'>
-<Image src={e.image} width={200} height={200}/>
-<h1 className='text-2xl' style={{width:"300px"}}>{e.title}</h1>
-<h1>{e.price}</h1>
-<button className='p-3 bg-green-600 rounded-md w-44 text-white mb-3'>Order</button>
+    <Link href={`/Products/${e.id}`} className='decoration-white'>
+    <div className="card  mt-4 " style={{width: "18rem;", height:"auto"}}>
+  <Image class="card-img-top"width={300} height={200}  src={e.image} alt="Card image cap" />
+  <div class="card-body">
+    <h5 class="card-title">Title: {e.title}</h5>
+    <p class="card-text">{e.description}</p>
+    <button href="#" className="btn btn-info w-full">Buy Now</button>
+  </div>
 </div>
     </Link>
     </>

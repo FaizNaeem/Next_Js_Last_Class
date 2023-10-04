@@ -1,6 +1,14 @@
 import details from '@/lib/detalis'
 import React from 'react'
 import './details.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+export async function generateMetadata({ params }){
+  const meta = await details(params.id)
+  return{
+    title : meta.category,
+    description : meta.description,
+  }
+}
 export default async function Id({params}) {
     const detail = await details(params.id)
     console.log(detail);
@@ -15,8 +23,8 @@ export default async function Id({params}) {
   <div className="card-body">
     <h5 class="card-title">Title: {detail.title}</h5>
     <p class="card-text"> Price : {detail.price}</p>
-    <h5 class="card-title">Age: {}</h5>
-    <a href="#" className="bg-green-500 hn"  s>Hello everyOne</a>
+    <h5 class="card-title">Category: {detail.category}</h5>
+    <button href="#" className="bg-gray-500 p-2 text-white flex items-center justify-center w-full text-center"  >Purchase Now</button>
   </div>
 </div>
  

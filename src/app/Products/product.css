@@ -1,0 +1,9 @@
+.h{
+    flex-wrap: wrap;
+    /* width: 300px; */
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+}
