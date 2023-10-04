@@ -3,13 +3,20 @@ import Image from 'next/image'
 import Link from 'next/link'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './product.css'
-
+import Navbar from '@/Component/Navbar';
 
 export default async function Products() {
-const product = await getData()
-console.log(product);
+  
+  const product = await getData()
+  
+  console.log(product);
+  
+  
   return (
-    <main className="">
+
+  <main className="">
+
+ <Navbar/>
  <h1 className='text-3xl text-center'>Products</h1>
  <div className='h' >
     {

@@ -2,6 +2,7 @@ import details from '@/lib/detalis'
 import React from 'react'
 import './details.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Suspense } from 'react'
 export async function generateMetadata({ params }){
   const meta = await details(params.id)
   return{
@@ -16,6 +17,10 @@ export default async function Id({params}) {
     <>
         
     <div className="hl">
+    <Suspense fallback={<div style={{display:"flex" , alignItems:"center" , justifyContent:"center", width:"100%", height:"50vh"}}>
+<div className="loader"></div>
+        </div>}>
+       
     <div className="card p-4" style={{width: "20rem;" }}>
       
   <img src={`${detail.image}`}  style={{width:"10rem"}} className="card-img-top p-3" alt="..."/>
@@ -27,6 +32,7 @@ export default async function Id({params}) {
     <button href="#" className="bg-gray-500 p-2 text-white flex items-center justify-center w-full text-center"  >Purchase Now</button>
   </div>
 </div>
+        </Suspense> 
  
     </div>
       
