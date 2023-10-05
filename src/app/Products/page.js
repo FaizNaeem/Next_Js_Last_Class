@@ -28,7 +28,8 @@ export default async function Products() {
   <Image class="card-img-top"width={300} height={200}  src={e.image} alt="Card image cap" />
   <div class="card-body">
     <h5 class="card-title">Title: {e.title}</h5>
-    <p class="card-text">{e.description}</p>
+    <h5 class="card-title">Category: {e.category}</h5>
+    <p class="card-text">Price : <span className='font-bold'>{e.price}</span> </p>
     <button href="#" className="btn btn-info w-full">Buy Now</button>
   </div>
 </div>

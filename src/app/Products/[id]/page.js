@@ -27,8 +27,9 @@ export default async function Id({params}) {
        
   <div className="card-body">
     <h5 class="card-title">Title: {detail.title}</h5>
-    <p class="card-text"> Price : {detail.price}</p>
+    <p class="card-text"> Price : {detail.price}</p> 
     <h5 class="card-title">Category: {detail.category}</h5>
+    <p class="card-text"> Description : {detail.description}</p> 
     <button href="#" className="bg-gray-500 p-2 text-white flex items-center justify-center w-full text-center"  >Purchase Now</button>
   </div>
 </div>
