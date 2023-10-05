@@ -2,7 +2,7 @@
 import { Authcontext } from '@/context/AuthProvider'
 import React, { useContext } from 'react'
 export default function Navbar() {
-    const check = useContext(Authcontext)
+    const {login} = useContext(Authcontext)
     // console.log(check);
 //     const CheckUser =()=>{
 // if (check== false){
